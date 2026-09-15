@@ -1,5 +1,7 @@
 # Sign Glove
 
+<img src="sign-glove-prototype.jpg" alt="Sign Glove prototype" width="450">
+
 An Arduino-based wearable prototype that converts predefined hand gestures into text displayed on an LCD.
 
 Developed as a Mini Project at the Lebanese University, Faculty of Engineering, Branch I.
