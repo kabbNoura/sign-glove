@@ -53,3 +53,22 @@ The recognized message appears on a 16×2 LCD. A Bluetooth module transmits sens
 - The supplied firmware sends sensor values over serial/Bluetooth; recognized messages are displayed on the LCD.
 - The breadboard-based prototype requires further mechanical refinement for everyday wear.
 
+## Getting Started
+
+1. Download `sign_glove.ino` and place it inside a folder named `sign_glove`.
+2. Open the sketch in the Arduino IDE.
+3. Install a compatible `LiquidCrystal_I2C` library supporting `lcd.init()`. The sketch also uses `Wire`.
+4. Select **Arduino Mega or Mega 2560** and the board's port.
+5. Check the connections:
+   - Flex sensor voltage-divider outputs: **A0–A4**
+   - Push button: **D7 and GND**, using `INPUT_PULLUP`
+   - I2C LCD: **SDA 20, SCL 21**, with address **0x27**
+6. Upload the sketch.
+7. Open the Serial Monitor at **9600 baud** to inspect sensor readings.
+8. Adjust the gesture thresholds for your sensors and hand position.
+
+The first capture starts automatically. Press the button for another capture, hold the gesture during the countdown, and read the resulting message on the LCD.
+
+### Calibration
+
+The sketch compares raw analog readings directly against fixed thresholds. Recalibrate these thresholds if the sensors, wiring, or wearer change. An unmatched gesture displays `?`.
